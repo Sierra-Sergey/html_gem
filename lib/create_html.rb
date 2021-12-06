@@ -1,8 +1,8 @@
-module CreateHtml
+class Pet
   def html
-    content = File.read('index.html')
+    content = File.read("#{Dir.pwd}/index.html")
 
-    File.open('pet_html.html', 'w') do |file|
+    File.open("#{Dir.pwd}/pet_html.html", 'w') do |file|
       content.gsub!('{{animal}}', animal)
       content.gsub!('{{name}}', name)
       content.gsub!('{{health}}', health.to_s)
