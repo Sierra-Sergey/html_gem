@@ -1,20 +1,11 @@
-class Pet
-  def html
-    content = File.read("#{Dir.pwd}/index.html")
+# class CreateHtml
+  def create_html(content, bypass_html = false, file_name = 'index.html')
+    content.gsub!(/[<>]/, '') if bypass_html == false
 
-    File.open("#{Dir.pwd}/pet_html.html", 'w') do |file|
-      content.gsub!('{{animal}}', animal)
-      content.gsub!('{{name}}', name)
-      content.gsub!('{{health}}', health.to_s)
-      content.gsub!('{{bellyful}}', bellyful.to_s)
-      content.gsub!('{{peppiness}}', peppiness.to_s)
-      content.gsub!('{{mood}}', mood.to_s)
-      content.gsub!('{{purity}}', purity.to_s)
-      content.gsub!('{{toilet}}', toilet.to_s)
-      content.gsub!('{{response}}', response.uniq.join('__').to_s)
-      content.gsub!('__', '<br>')
-      content.gsub!('{{emoji}}', "‍#{emoji}")
-      file.write(content.to_s)
+    File.open("#{Dir.pwd}/#{file_name}", 'w') do |file|
+      file.write(content)
     end
   end
-end
+
+  
+# end
