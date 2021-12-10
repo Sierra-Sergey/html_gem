@@ -1,11 +1,11 @@
-# class CreateHtml
-  def create_html(content, bypass_html = false, file_name = 'index.html')
-    content.gsub!(/[<>]/, '') if bypass_html == false
+def create_html(content, bypass_html = false, file_name = 'index.html')
+  content.gsub!(/[<>]/, '') if bypass_html == false
 
-    File.open("#{Dir.pwd}/#{file_name}", 'w') do |file|
-      file.write(content)
-    end
+  File.open("#{Dir.pwd}/#{file_name}", 'w') do |file|
+    file.write(content)
   end
+end
 
-  
-# end
+def open
+  system("xdg-open #{Dir.pwd}/#{file_name}")
+end
