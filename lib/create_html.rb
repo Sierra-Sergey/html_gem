@@ -6,6 +6,6 @@ def create_html(content, bypass_html = false, file_name = 'index.html')
   end
 end
 
-def open
+def open(file_name)
   system("xdg-open #{Dir.pwd}/#{file_name}")
 end
