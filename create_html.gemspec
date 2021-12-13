@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'create_html'
-  s.version     = '0.2.1'
+  s.version     = '0.2.2'
   s.summary     = 'CreateHtml'
   s.description = 'Making html'
   s.authors     = ['Sergey Ponomarenko']
